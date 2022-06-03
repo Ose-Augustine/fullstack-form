@@ -12,9 +12,11 @@ def setup_db(app,database_path=database_path):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
     app.config['SQLALCHEMY_DATABASE_URI']=database_path
     db.init_app(app)
-    db.create_all()
 
-class Form(db.model):
+    with app.app_context():
+        db.create_all()
+
+class Form(db.Model):
     id = Column(Integer,primary_key=True)
     first_name = Column(String(),nullable=False)
     last_name =Column(String(),nullable=False)
