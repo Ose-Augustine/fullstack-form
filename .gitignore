@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+#flask alembic migrations
+migrations/
 # Distribution / packaging
 .Python
 build/
