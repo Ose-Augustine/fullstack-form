@@ -8,5 +8,22 @@
 </head>
 <body>
     <p>Sample this page</p>
+    <form action="/submissions" method="post" novalidate>
+        <ul>
+            {{form.first_name.label}}
+            <li>{{form.first_name}}</li>
+            {% for error in form.first_name.errors %} 
+            <li style="color:black;">{{error}}</li>
+            {% endfor %}
+            <li>{{form.last_name.label}}</li>
+            <li>{{form.last_name}}</li>
+            {{form.password.label}}
+            <li>{{form.password}}</li>
+            {{form.email.label}}
+            <li>{{form.email}}</li>
+            <li></li>
+        </ul>
+        <input type="submit" value="submit">
+    </form>
 </body>
 </html>
