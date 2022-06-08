@@ -19,18 +19,14 @@ def create_form_submission():
         first_name=form.first_name.data,
         last_name = form.last_name.data,
         password  = form.password.data ,
-        email = '',
+        email     = form.email.data
     )
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         try:
             person.insert()
         except:
             person.reverse()
-            return 'problemS'
-    else:
-        for error in form.errors:
-            return error
-    return redirect(url_for('render_forms'))
+    return render_template('forms.html',form=form)
 
 if __name__=='__main__':
     app.run(debug=True)
