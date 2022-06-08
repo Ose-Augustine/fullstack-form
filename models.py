@@ -24,7 +24,8 @@ class Person(db.Model):
     id         = Column(Integer,primary_key=True,nullable=False)
     first_name = Column(String(),nullable=False)
     last_name  = Column(String(),nullable=False)
-    password   = Column(String(),nullable=False)
+    password   = Column(String(),nullable=False) 
+    confirm    = Column(String(),nullable=False)
     email      = Column(String(),nullable=True)
 
     def insert(self):

@@ -3,24 +3,19 @@
     <p>Sample this page</p>
     <form action="/submissions"method="post" >
         <ul>
-            {{form.first_name.label}}
-            <li>{{form.first_name}}</li>
-            {% for error in form.first_name.errors %} 
-            <li style="color:black;">{{error}}</li>
-            {% endfor %}
-           
-            <li>{{form.last_name.label}}</li>
-            <li>{{form.last_name}}</li>
-            {% for error in form.last_name.errors %} 
-            <li style="color:black;">{{error}}</li>
-            {% endfor %}
-
-            {{form.password.label}}
-            <li>{{form.password}}</li>
-            {% for error in form.password.errors %} 
-            <li style="color:black;">{{error}}</li>
+            <!--using the .hidden tag and if condition 
+                ensures that fields like the csrf token do not have their
+            labels shown -->
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type != 'hidden'%} 
+            {{field.label}}
+            <li>{{field}}</li>
+                {% for error in field.errors %} 
+                <li style="color:red;">{{error}}</li>
+                {% endfor %}
             {% endfor %}
         </ul>
+       
         <input type="submit" value="submit">
     </form>
 </body>
