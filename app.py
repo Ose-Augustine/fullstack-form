@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY']='bahd'
 setup_db(app)
 
-@app.route('/forms')
+@app.route('/')
 def render_forms():
     form = BasicForm() 
     return render_template('forms.html',form=form)
