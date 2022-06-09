@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index/styles.css') }}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 </head>
 <body>
-    <header>This is an online form . Not a real service
-        but also not dangerous to apply!! Go on and give a try. Meet your soulmate here!!
+    <header>
+        This is not a real online service! You know you need something like this in your life to help you
+        realise your deepest dreams. Sign up now to get started.
     </header>
-    <form action="/submissions"method="post" >
-        <ul>
+    <p> You know you want to .</p>
 
-            <li>{{form.first_name.label}} {{form.first_name}}</li>
-            <li>{{form.last_name.label}} {{form.last_name}}</li>
-            <li>{{form.password.label}} {{form.password}}</li>
-            <li>{{form.email.label}} {{form.email(class_ = 'email',placeholder='you@email.com')}}</li>
-            <li>{{form.confirm.label}} {{form.confirm}}</li>
-            {% for error in form.confirm.errors %} 
+    <main>
+        <form action="/submissions"method="post" >
             <ul>
-                <li style="color:red;">{{ error }}</li>
-            </ul>
-            {% endfor %}
-        </ul>
+                <div>
+                    <li>{{form.first_name.label}}</li>
+                    <li>{{form.first_name(class_='field')}}</li>
+                </div>
 
-        <footer>
-            Ready when you are to 
-            <input type="submit" value="create account">
-            <div>Have an Account?<input type="submit" value="log in"></div>
-            
-        </footer>
+                <div>
+                    <li>{{form.last_name.label}}</li>
+                    <li>{{form.last_name(class_='field')}}</li>
+                </div>
+                
+               <div>
+                <li>{{form.password.label}}</li>
+                <li>{{form.password(class_='field')}}</li>
+               </div>
+               
+               <div>
+                <li>{{form.email.label}}</li>
+                <li>{{form.email(class_ = 'email field',placeholder='you@email.com')}}</li>
+               </div>
+
+               <div>
+                <li>{{form.phone_number.label}}</li>
+                <li>{{form.phone_number(class_='field',placeholder='xxx-xxx-xxxx')}}</li>
+               </div>
+              
+               <div>
+                <li>{{form.confirm.label}}</li>
+                <li >{{form.confirm}}</li>
+               </div>
+                {% for error in form.confirm.errors %} 
+                <ul>
+                    <li style="color:red;">{{ error }}</li>
+                </ul>
+                {% endfor %}
+            </ul>
+            <input type="submit" value="submit">
+        </form>
+    </main>
+    <footer> Already have an account?
+        <nav>
+            <a href="#">Sign in </a>
+        </nav>
+    </footer>
+
+  
+      
        
-    </form>
+  
    
 </body>
 

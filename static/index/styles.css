@@ -1,0 +1,16 @@
+form {
+   display:flex;
+   flex-direction:column;
+   max-width: fit-content;
+   align-items: start;
+}
+
+form > ul {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.8em;
+}
+
+ul{
+    list-style-type: none;
+}
