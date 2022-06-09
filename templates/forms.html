@@ -12,18 +12,19 @@
     </header>
     <form action="/submissions"method="post" >
         <ul>
-            <!--using the .hidden tag and if condition 
-                ensures that fields like the csrf token do not have their
-            labels shown -->
-            {{form.hidden_tag()}}
-            {% for field in form if field.widget.input_type != 'hidden'%} 
-            {{field.label}}
-            <li>{{field}}</li>
-                {% for error in field.errors %} 
-                <li style="color:red;">{{error}}</li>
-                {% endfor %}
+
+            <li>{{form.first_name.label}} {{form.first_name}}</li>
+            <li>{{form.last_name.label}} {{form.last_name}}</li>
+            <li>{{form.password.label}} {{form.password}}</li>
+            <li>{{form.email.label}} {{form.email(class_ = 'email',placeholder='you@email.com')}}</li>
+            <li>{{form.confirm.label}} {{form.confirm}}</li>
+            {% for error in form.confirm.errors %} 
+            <ul>
+                <li style="color:red;">{{ error }}</li>
+            </ul>
             {% endfor %}
         </ul>
+
         <footer>
             Ready when you are to 
             <input type="submit" value="create account">

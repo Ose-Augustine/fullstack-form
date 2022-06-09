@@ -7,5 +7,5 @@ class BasicForm(Form):
     first_name = StringField('firstname',validators=[DataRequired("This field should not be empty")])
     last_name = StringField('lastname',validators=[DataRequired()])
     password = PasswordField('password',validators=[DataRequired()])
-    confirm = PasswordField('confirm password',validators=[EqualTo("password",message="passwords must be the same")])
+    confirm = PasswordField('confirm_password',validators=[EqualTo("password",message="passwords must be the same")])
     email = EmailField('email',validators=[Email(message="This is email is not of the right format ")])

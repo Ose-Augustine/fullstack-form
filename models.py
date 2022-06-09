@@ -28,6 +28,7 @@ class Person(db.Model):
     confirm    = Column(String(),nullable=False)
     email      = Column(String(),nullable=True)
 
+
     def insert(self):
         db.session.add(self)
         db.session.commit()
