@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy 
+import os 
 from sqlalchemy import Column, Integer, String 
 from flask_migrate import Migrate
 

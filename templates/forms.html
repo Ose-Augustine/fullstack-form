@@ -8,60 +8,64 @@
     <title>Form</title>
 </head>
 <body>
-    <header>
-        This is not a real online service! You know you need something like this in your life to help you
-        realise your deepest dreams. Sign up now to get started.
-    </header>
-    <img src="{{url_for('static',filename='images/sample_image.jpg')}}"width="300" height="400" alt="Picture of a room">
-    <p> You know you want to .</p>
-
-    <main>
-        <form action="/submissions"method="post" >
-            <ul>
-                <div>
-                    <li>{{form.first_name.label}}</li>
-                    <li>{{form.first_name(class_='field')}}</li>
-                </div>
-
-                <div>
-                    <li>{{form.last_name.label}}</li>
-                    <li>{{form.last_name(class_='field')}}</li>
-                </div>
-                
-               <div>
-                <li>{{form.password.label}}</li>
-                <li>{{form.password(class_='field')}}</li>
-               </div>
-               
-               <div>
-                <li>{{form.email.label}}</li>
-                <li>{{form.email(class_ = 'email field',placeholder='you@email.com')}}</li>
-               </div>
-
-               <div>
-                <li>{{form.phone_number.label}}</li>
-                <li>{{form.phone_number(class_='field',placeholder='xxx-xxx-xxxx')}}</li>
-               </div>
-              
-               <div>
-                <li>{{form.confirm.label}}</li>
-                <li >{{form.confirm}}</li>
-                {% for error in form.confirm.errors %} 
+  
+    <img src="{{url_for('static',filename='images/sample_image.jpg')}}"width="300" height="550" alt="Picture of a room "class='left'>
+    <div class="text_container">
+        <header class="left" >
+            <p>This is an online form. Come and join our interior designs team</p>
+            <p> You know you want to .</p>
+        </header>
+        
+    
+        <main class="right">
+            <form action="/submissions"method="post" >
                 <ul>
-                    <li style="color:red;">{{ error }}</li>
+                    <div>
+                        <li>{{form.first_name.label}}</li>
+                        <li>{{form.first_name(class_='field')}}</li>
+                    </div>
+    
+                    <div>
+                        <li>{{form.last_name.label}}</li>
+                        <li>{{form.last_name(class_='field')}}</li>
+                    </div>
+                    
+                   <div>
+                    <li>{{form.password.label}}</li>
+                    <li>{{form.password(class_='field')}}</li>
+                   </div>
+                   
+                   <div>
+                    <li>{{form.email.label}}</li>
+                    <li>{{form.email(class_ = 'email field',placeholder='you@email.com')}}</li>
+                   </div>
+    
+                   <div>
+                    <li>{{form.phone_number.label}}</li>
+                    <li>{{form.phone_number(class_='field',placeholder='xxx-xxx-xxxx')}}</li>
+                   </div>
+                  
+                   <div>
+                    <li>{{form.confirm.label}}</li>
+                    <li >{{form.confirm}}</li>
+                    {% for error in form.confirm.errors %} 
+                    <ul>
+                        <li style="color:red;">{{ error }}</li>
+                    </ul>
+                    {% endfor %}
+                   </div>
+                  
                 </ul>
-                {% endfor %}
-               </div>
-              
-            </ul>
-            <input type="submit" value="submit">
-        </form>
-    </main>
-    <footer> Already have an account?
-        <nav>
-            <a href="#">Sign in </a>
-        </nav>
-    </footer>
+                <input type="submit" value="submit">
+            </form>
+        </main>
+        <footer> Already have an account?
+            <nav>
+                <a href="#">Sign in </a>
+            </nav>
+        </footer>
+    </div>
+   
 
   
       
