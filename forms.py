@@ -1,10 +1,10 @@
 from flask_wtf import FlaskForm as Form
 from traitlets import validate 
-from wtforms import StringField,PasswordField,EmailField,IntegerField
+from wtforms import StringField,PasswordField,EmailField,TelField
 from wtforms.validators import DataRequired,InputRequired, Email , EqualTo
 
 class BasicForm(Form):
-    phone_number = IntegerField('phone_number',validators=[DataRequired()])
+    phone_number = TelField('phone_number',validators=[DataRequired()])
     first_name = StringField('firstname',validators=[DataRequired("This field should not be empty")])
     last_name = StringField('lastname',validators=[DataRequired()])
     password = PasswordField('password',validators=[DataRequired()])
