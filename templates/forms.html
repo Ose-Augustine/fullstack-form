@@ -43,6 +43,12 @@
                    <div>
                     <li>{{form.phone_number.label}}</li>
                     <li>{{form.phone_number(class_='field',placeholder='xxx-xxx-xxxx')}}</li>
+                    {% for error in form.phone_number.errors %} 
+                    <ul>
+                        <li class="error" style="color:red;">{{ error }}</li>
+                    </ul>
+                       
+                    {% endfor %}
                    </div>
                   
                    <div>
@@ -50,7 +56,7 @@
                     <li >{{form.confirm}}</li>
                     {% for error in form.confirm.errors %} 
                     <ul>
-                        <li style="color:red;">{{ error }}</li>
+                        <li class="error"style="color:red;">{{ error }}</li>
                     </ul>
                     {% endfor %}
                    </div>
