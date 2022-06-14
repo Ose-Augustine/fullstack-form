@@ -15,11 +15,15 @@ form > ul {
     grid-template-columns:repeat(2,1fr);
     grid-gap:0.8em;
 }
+.field:focus{
+    color:rgb(114, 107, 107);
 
+}
 header{
-    font-size:large;
+    padding-top:20px;
+    font-size:medium;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color:rgb(196, 187, 187)
+    
 }
 
 /* Controls the background image and the overlapping picture 
@@ -29,21 +33,29 @@ inside of it*/
     /* push the embeded image to the center*/
     justify-content: center;
     width: 500px;
-    height: 800px;
-    background-image: url(./images/fern.jpg);
+    height: 550px;
+    background-image: url(fern.jpg);
     /*To set the image to display fully in the background*/
     background-size:100% 100%;
   }
 .backing > div {
     opacity:0.4;
 }
-
+.text_container{
+    display:flex;
+    flex-direction: column;
+    padding-left:40px;
+    justify-content: space-between;
+}
 
 footer {
-    border-radius:50%;
-    padding:20px;
-    box-shadow: 12px 10px 0.8rem teal;
+    padding-bottom:60px;
+    box-shadow: 12px 10px 0.8rem rgb(2, 2, 2);
   }
+nav > a{
+    list-style-type: none;
+    text-decoration:none !important;
+}
 
 a:hover{
     color:purple;
